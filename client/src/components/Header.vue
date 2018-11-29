@@ -4,10 +4,22 @@
       <span class="home" @click="navigateTo({name: 'root'})">TabTracker</span>
     </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat dark @click="navigateTo({name: 'login'})">Log in
+
+    <v-toolbar-items>
+      <v-btn
+        v-if="!$store.state.isUserLoggedIn"
+        flat dark
+        @click="navigateTo({name: 'login'})">
+        Log in
       </v-btn>
-        <v-btn flat dark @click="navigateTo({name: 'Register'})">Sign Up
-        </v-btn>
+
+      <v-btn
+        v-if="!$store.state.isUserLoggedIn"
+        flat dark
+        @click="navigateTo({name: 'Register'})">
+        Sign Up
+      </v-btn>
+    </v-toolbar-items>
   </v-toolbar>
 </template>
 
