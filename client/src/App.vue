@@ -12,7 +12,6 @@
   </div>
 </template>
 
-
 <script>
 import PageHeader from '@/components/Header.vue'
 

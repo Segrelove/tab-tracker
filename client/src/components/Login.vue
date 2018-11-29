@@ -14,7 +14,7 @@
             v-model="password"
             placeholder="Password"/><br>
             <div class="error" v-html="error"/>
-            <v-btn @click="login" class="cyan" dark>login</v-btn>
+            <v-btn @click="login  " class="cyan" dark>login</v-btn>
           </div>
         </div>
       </v-flex>

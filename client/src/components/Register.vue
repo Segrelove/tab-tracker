@@ -9,9 +9,11 @@
           <div class="pl-4 pr-4 pt-2 pb-2">
             <v-text-field type="email" name="email"
             v-model="email"
+            autocomplete="off"
             placeholder="Email"/><br>
             <v-text-field type="password" name="password"
             v-model="password"
+            autocomplete="new-password"
             placeholder="Password"/><br>
             <div class="error" v-html="error"/>
             <v-btn @click="register" class="cyan" dark>Register</v-btn>
