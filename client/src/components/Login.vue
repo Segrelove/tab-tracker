@@ -3,7 +3,7 @@
       <v-flex offset-xs>
         <div class="white elevation-10">
           <v-toolbar flat dense class="cyan" dark>
-            <v-toolbar-title>Register</v-toolbar-title>
+            <v-toolbar-title>Login</v-toolbar-title>
           </v-toolbar>
 
           <div class="pl-4 pr-4 pt-2 pb-2">
@@ -14,7 +14,7 @@
             v-model="password"
             placeholder="Password"/><br>
             <div class="error" v-html="error"/>
-            <v-btn @click="register" class="cyan" dark>Register</v-btn>
+            <v-btn @click="login" class="cyan" dark>login</v-btn>
           </div>
         </div>
       </v-flex>
@@ -33,9 +33,9 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        const response = await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
