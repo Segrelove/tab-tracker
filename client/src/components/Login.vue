@@ -1,22 +1,16 @@
 <template>
   <v-layout align-center justify-center column fill-height>
       <v-flex offset-xs>
-        <div class="white elevation-10">
-          <v-toolbar flat dense class="cyan" dark>
-            <v-toolbar-title>Login</v-toolbar-title>
-          </v-toolbar>
-
-          <div class="pl-4 pr-4 pt-2 pb-2">
-            <v-text-field type="email" name="email"
-            v-model="email"
-            placeholder="Email"/><br>
-            <v-text-field type="password" name="password"
-            v-model="password"
-            placeholder="Password"/><br>
-            <div class="error" v-html="error"/>
-            <v-btn @click="login  " class="cyan" dark>login</v-btn>
-          </div>
-        </div>
+        <panel title="Login">
+          <v-text-field type="email" name="email"
+          v-model="email"
+          placeholder="Email"/><br>
+          <v-text-field type="password" name="password"
+          v-model="password"
+          placeholder="Password"/><br>
+          <div class="error" v-html="error"/>
+          <v-btn @click="login  " class="cyan" dark>login</v-btn>
+        </panel>
       </v-flex>
   </v-layout>
 </template>
@@ -24,6 +18,8 @@
 <script>
 /* eslint-disable */
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
+
 export default {
   data () {
     return {
@@ -45,6 +41,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components :{
+    Panel
   }
 }
 </script>
